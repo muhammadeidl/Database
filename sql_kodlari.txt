@@ -1,0 +1,126 @@
+create schema person;
+
+CREATE TABLE "teams" (
+  "teamID" SERIAL PRIMARY KEY,
+  "name" VARCHAR(50),
+  "city" VARCHAR(50),
+  "est_year" DATE
+);
+
+CREATE TABLE "person"."person" ( 
+	"personID" SERIAL,
+	"firstName" VARCHAR(50) NOT NULL,
+	"lastName" VARCHAR(50) NOT NULL,
+	"birthDate" DATE,
+	CONSTRAINT "personPK" PRIMARY KEY ("personID")
+);
+
+
+CREATE TABLE "person"."players" (
+    "personID" INTEGER,
+    "teamID" INTEGER,
+    "positions" VARCHAR(50),
+    "nationalTeam" VARCHAR(50),
+    CONSTRAINT "playersPK" PRIMARY KEY ("personID"),
+    CONSTRAINT "teamFK" FOREIGN KEY ("teamID") REFERENCES "teams"("teamID")
+);
+
+
+CREATE TABLE "person"."coaches" (
+    "personID" INTEGER,
+    "teamID" INTEGER,
+    CONSTRAINT "coachesPK" PRIMARY KEY ("personID"),
+    CONSTRAINT "teamFK" FOREIGN KEY ("teamID") REFERENCES "teams"("teamID")
+);
+
+CREATE TABLE "person"."referees" (
+    "personID" INTEGER,
+    "country" VARCHAR(50),
+    CONSTRAINT "refereesPK" PRIMARY KEY ("personID")
+);
+
+CREATE TABLE "leagues" (
+  "leagueID" SERIAL PRIMARY KEY,
+  "leagueName" VARCHAR(50),
+  "season" VARCHAR(50),
+  "county" VARCHAR(50),
+  "teamID" INTEGER,
+  FOREIGN KEY ("teamID") REFERENCES "teams"("teamID")
+);
+
+
+CREATE TABLE "standings" (
+  "standingsID" SERIAL PRIMARY KEY,
+  "teamID" INTEGER,
+  "wins" INTEGER,
+  "losses" INTEGER,
+  "draws" INTEGER,
+  FOREIGN KEY ("teamID") REFERENCES "teams"("teamID")
+);
+
+CREATE TABLE "awards" (
+  "awardID" SERIAL PRIMARY KEY,
+  "awardName" VARCHAR(50),
+  "personID" INTEGER,
+  FOREIGN KEY ("personID") REFERENCES "person"."person"("personID")
+);
+
+CREATE TABLE "transfers" (
+  "transferID" SERIAL PRIMARY KEY,
+  "personID" INTEGER,
+  "oldTeam" VARCHAR(50),
+  "newTeam" VARCHAR(50),
+  "transferDate" DATE,
+  FOREIGN KEY ("personID") REFERENCES "person"."person"("personID")
+);
+
+
+CREATE TABLE "teamAbilities" (
+  "teamAbilitiesID" SERIAL PRIMARY KEY,
+  "Attack" VARCHAR(50),
+  "Mid" VARCHAR(50),
+  "Defensive" VARCHAR(50),
+  "teamID" INTEGER,
+  FOREIGN KEY ("teamID") REFERENCES "teams"("teamID")
+);
+
+
+CREATE TABLE "stadium" (
+  "stadiumID" SERIAL PRIMARY KEY,
+  "stadiumName" VARCHAR(50),
+  "teamID" INTEGER,
+  FOREIGN KEY ("teamID") REFERENCES "teams"("teamID")
+);
+
+
+CREATE TABLE "matches" (
+  "matchID" SERIAL PRIMARY KEY,
+  "homeTeam" VARCHAR(50),
+  "awayTeam" VARCHAR(50),
+  "score" INTEGER,
+  "matchDate" DATE,
+  "stadiumID" INTEGER,
+  FOREIGN KEY ("stadiumID") REFERENCES "stadium"("stadiumID")
+);
+
+CREATE TABLE "leagueMatches" (
+  "leagueID" INTEGER,
+  "matchID" INTEGER,
+  PRIMARY KEY ("leagueID", "matchID"),
+  FOREIGN KEY ("leagueID") REFERENCES "leagues"("leagueID"),
+  FOREIGN KEY ("matchID") REFERENCES "matches"("matchID")
+);
+
+CREATE TABLE "goals" (
+  "goalID" SERIAL PRIMARY KEY,
+  "goalNumbers" INTEGER
+);
+
+CREATE TABLE "teamsGoals" (
+  "goalID" INTEGER,
+  "teamID" INTEGER,
+  PRIMARY KEY ("goalID", "teamID"),
+  FOREIGN KEY ("goalID") REFERENCES "goals"("goalID"),
+  FOREIGN KEY ("teamID") REFERENCES "teams"("teamID")
+);
+

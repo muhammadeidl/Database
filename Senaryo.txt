@@ -1,0 +1,22 @@
+// Senaryo:
+
+
+
+"Futbol Ligi Sezonu" adlı senaryo, bir futbol ligi yönetim sistemini temsil eder.
+Ligdeki takımların oluşturulmasıyla başlayan senaryo,
+her bir takımın oyuncularını transfer etmesiyle devam eder.
+Ligdeki maçlar düzenlenir ve bu maçlara hakem atamaları yapılır.
+Maçlar sırasında kart ve gol kayıtları tutularak,
+oyuncuların performansları izlenir.
+
+Her olayın ardından, puan durumu güncellenir ve
+ligdeki takımlar arasındaki sıralama belirlenir.
+Lig sezonu boyunca oyunculara ödüller verilebilir,
+transferler gerçekleşebilir ve takımların yetenekleri değerlendirilebilir.
+Bu bilgiler, veritabanındaki ilgili tablolar üzerinden tutulur ve yönetilir.
+
+Senaryo, futbol ligi yönetimi için gerekli olan temel işlemleri içerir
+ve veritabanındaki tablolar aracılığıyla bu bilgilerin tutulmasını sağlar.
+Ligdeki her takım, oyuncu, maç,
+hakem ve diğer katılımcıların verileri düzenli bir şekilde saklanarak,
+ligin başarılı bir şekilde yönetilmesine imkan tanır.

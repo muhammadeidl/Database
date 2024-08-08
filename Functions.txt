@@ -1,0 +1,132 @@
+/// bu function awards(Ödülü) getirir ////
+
+
+
+CREATE OR REPLACE FUNCTION get_awards_for_player(p_personID INTEGER)
+RETURNS TABLE (
+    awardID INTEGER,
+    awardName VARCHAR(50)
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        "awardID",
+        "awardName"
+    FROM
+        "awards"
+    WHERE
+        "personID" = p_personID;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+-- Example call to get_awards_for_player function
+SELECT * FROM get_awards_for_player(1);
+
+
+
+
+
+==============================================================
+==============================================================
+
+
+/// bu function playerin awards(Ödülü) siler ////
+
+
+
+CREATE OR REPLACE FUNCTION delete_award_for_player(
+    p_personID INTEGER,
+    p_awardID INTEGER
+)
+RETURNS VOID AS $$
+BEGIN
+    DELETE FROM "awards"
+    WHERE "personID" = p_personID AND "awardID" = p_awardID;
+END;
+$$ LANGUAGE plpgsql;
+
+
+-- Example call to delete_award_for_player function
+SELECT delete_award_for_player(1, 5);
+
+
+==============================================================
+==============================================================
+
+/// bu function player getirir ////
+
+
+
+
+CREATE OR REPLACE FUNCTION get_player(p_personID INTEGER)
+RETURNS TABLE (
+    personID INTEGER,
+    firstName VARCHAR(50),
+    lastName VARCHAR(50),
+    birthDate DATE,
+    positions VARCHAR(50),
+    nationalTeam VARCHAR(50),
+    teamID INTEGER
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        p."personID",
+        p."firstName",
+        p."lastName",
+        p."birthDate",
+        pl."positions",
+        pl."nationalTeam",
+        pl."teamID"
+    FROM
+        "person"."person" p
+    JOIN
+        "person"."players" pl ON p."personID" = pl."personID"
+    WHERE
+        p."personID" = p_personID;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+
+
+-- Example call to get_player function
+SELECT * FROM get_player(1);
+
+
+
+
+
+==============================================================
+==============================================================
+
+/// bu function playerin positions'ine update yapar ////
+
+
+
+CREATE OR REPLACE FUNCTION update_player_positions(
+    p_personID INTEGER,
+    p_positions VARCHAR(50)
+)
+RETURNS VOID AS $$
+BEGIN
+    UPDATE "person"."players"
+    SET "positions" = p_positions
+    WHERE "personID" = p_personID;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+-- Example call to update_player_positions function
+SELECT update_player_positions(2, 'Defender');
+
+
+
+
+==============================================================
+==============================================================
+

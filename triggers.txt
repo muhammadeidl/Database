@@ -1,0 +1,213 @@
+/// Bir tablo oluşturarak stadyumu yeni bir adla adlandırır ///
+
+
+ 
+-- to ensure stadium name is
+CREATE OR REPLACE FUNCTION uppercase_stadium_name()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW."stadiumName" := UPPER(NEW."stadiumName");
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Trigger to activate the function before an INSERT or UPDATE operation on the "stadium" table
+CREATE TRIGGER before_insert_update_stadium
+BEFORE INSERT OR UPDATE ON "stadium"
+FOR EACH ROW EXECUTE FUNCTION uppercase_stadium_name();
+
+
+
+
+
+
+INSERT INTO "stadium" ("stadiumName", "teamID") VALUES ('yeni stadium', 1);
+
+
+
+
+
+
+
+
+
+==========================================================================
+==========================================================================
+
+//// bu trigger goalNumbers destirir
+
+yerini yeni bir number ekleyebiliriz //// 
+
+
+
+-- Trigger to ensure that goalNumbers is always greater than or equal to 0
+CREATE OR REPLACE FUNCTION validate_goal_numbers()
+RETURNS TRIGGER AS $$
+BEGIN
+  IF NEW."goalNumbers" < 0 THEN
+    RAISE EXCEPTION 'Goal numbers must be greater than or equal to 0';
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Trigger to activate the function before an INSERT or UPDATE operation on the "goals" table
+CREATE TRIGGER before_insert_update_goals
+BEFORE INSERT OR UPDATE ON "goals"
+FOR EACH ROW EXECUTE FUNCTION validate_goal_numbers();
+
+
+-- This will trigger the validation trigger
+INSERT INTO "goals" ("goalNumbers") VALUES (17);
+
+
+
+
+
+
+
+
+
+
+==========================================================================
+==========================================================================
+
+==========================================================================
+==========================================================================
+
+///// Kişinin bilgilerine gider, adını değiştirir ve soyadını birakir. ///////
+
+
+
+CREATE OR REPLACE FUNCTION set_default_birthdate_on_update()
+RETURNS TRIGGER AS $$
+BEGIN
+  IF NEW."birthDate" IS NULL THEN
+    NEW."birthDate" := CURRENT_DATE;
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_set_default_birthdate_on_update
+BEFORE UPDATE ON "person"."person"
+FOR EACH ROW
+EXECUTE FUNCTION set_default_birthdate_on_update();
+
+
+
+
+
+-- Assume personID is the ID of the person you want to update
+UPDATE "person"."person"
+SET "firstName" = 'UpdatedFirstName'
+WHERE "personID" = 1;  -- Replace 1 with the actual personID
+
+
+
+
+
+==========================================================================
+==========================================================================
+
+
+//// EĞer (birthdate NULL) ise >> CURRENT_DATE ekler. ////
+
+
+
+
+
+
+CREATE OR REPLACE FUNCTION set_default_birthdate()
+RETURNS TRIGGER AS $$
+BEGIN
+  IF NEW."birthDate" IS NULL THEN
+    NEW."birthDate" := CURRENT_DATE;
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_set_default_birthdate
+BEFORE INSERT ON "person"."person"
+FOR EACH ROW
+EXECUTE FUNCTION set_default_birthdate();
+
+
+
+-- Insert a new person without specifying the birthDate
+INSERT INTO "person"."person" ("firstName", "lastName")
+VALUES ('John', 'merhabba');
+
+
+==========================================================================
+==========================================================================
+
+
+////  Bu trigger, bir "person" tablosuna yeni bir satır eklerken,
+eğer "birthDate" alanı belirtilmemişse (NULL ise),
+bu alanı özel bir tarih olan 'restgle' olarak ayarlar.
+Yani, eğer bir kişi eklenirken doğum tarihi belirtilmemiş ise,
+bu trigger otomatik olarak doğum tarihini 'restgle' olarak atar.  ////
+
+
+
+
+
+
+
+
+CREATE OR REPLACE FUNCTION set_default_birthdate_specific()
+RETURNS TRIGGER AS $$
+BEGIN
+  IF NEW."birthDate" IS NULL THEN
+    NEW."birthDate" := '2000-01-01'::DATE;
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_set_default_birthdate_specific
+BEFORE INSERT ON "person"."person"
+FOR EACH ROW
+EXECUTE FUNCTION set_default_birthdate_specific();
+
+
+
+
+-- Insert a new person without specifying the birthDate
+INSERT INTO "person"."person" ("firstName", "lastName")
+VALUES ('Hamoud', 'Hasan');
+
+-- Query the inserted record to verify the birthDate
+SELECT * FROM "person"."person";
+
+
+
+
+==========================================================================
+==========================================================================
+
+
+
+
+==========================================================================
+==========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

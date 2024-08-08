@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "jNnc9GiM99dGN7iRqDLp1Bv3gEs28wd1+tK5XWrh4cgF5HJ2SfIxFzqGBcYXanla4iwCDZimn/xL2LlDcBs/4Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\asils\\Desktop\\BenimProjemFootBall\\BenimProjemFootBall\\BenimProjemFootBall.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\asils\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\asils\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\asils\\.nuget\\packages\\npgsql\\8.0.1\\npgsql.8.0.1.nupkg.sha512",
+    "C:\\Users\\asils\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
+    "C:\\Users\\asils\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\asils\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\asils\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

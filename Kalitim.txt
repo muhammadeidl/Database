@@ -1,0 +1,44 @@
+//// 'person' ebveyn olur ve "oyuncu, hakem,refree" bunlar kisinin cocuklaridir  ///
+
+
+
+create schema person;
+
+CREATE TABLE "teams" (
+  "teamID" SERIAL PRIMARY KEY,
+  "name" VARCHAR(50),
+  "city" VARCHAR(50),
+  "est_year" DATE
+);
+
+CREATE TABLE "person"."person" ( 
+	"personID" SERIAL,
+	"firstName" VARCHAR(50) NOT NULL,
+	"lastName" VARCHAR(50) NOT NULL,
+	"birthDate" DATE,
+	CONSTRAINT "personPK" PRIMARY KEY ("personID")
+);
+
+
+CREATE TABLE "person"."players" (
+    "personID" INTEGER,
+    "teamID" INTEGER,
+    "positions" VARCHAR(50),
+    "nationalTeam" VARCHAR(50),
+    CONSTRAINT "playersPK" PRIMARY KEY ("personID"),
+    CONSTRAINT "teamFK" FOREIGN KEY ("teamID") REFERENCES "teams"("teamID")
+);
+
+
+CREATE TABLE "person"."coaches" (
+    "personID" INTEGER,
+    "teamID" INTEGER,
+    CONSTRAINT "coachesPK" PRIMARY KEY ("personID"),
+    CONSTRAINT "teamFK" FOREIGN KEY ("teamID") REFERENCES "teams"("teamID")
+);
+
+CREATE TABLE "person"."referees" (
+    "personID" INTEGER,
+    "country" VARCHAR(50),
+    CONSTRAINT "refereesPK" PRIMARY KEY ("personID")
+);

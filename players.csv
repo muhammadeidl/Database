@@ -1,0 +1,22 @@
+"personID","teamID","positions","nationalTeam","personName"
+1,2,"Defender","NationalTeamB",NULL
+2,2,"Defender","National Team B",NULL
+3,3,"Defender","National Team C",NULL
+4,4,"Goalkeeper","National Team D",NULL
+5,5,"Striker","National Team E",NULL
+6,6,"Midfielder","National Team F",NULL
+7,7,"Defender","National Team G",NULL
+8,8,"Forward","National Team H",NULL
+9,9,"Goalkeeper","National Team I",NULL
+10,10,"Striker","National Team J",NULL
+11,11,"Midfielder","National Team K",NULL
+12,12,"Defender","National Team L",NULL
+13,13,"Forward","National Team M",NULL
+14,14,"Goalkeeper","National Team N",NULL
+15,15,"Striker","National Team O",NULL
+16,16,"Midfielder","National Team P",NULL
+17,17,"Defender","National Team Q",NULL
+18,18,"Forward","National Team R",NULL
+19,19,"Goalkeeper","National Team S",NULL
+20,20,"Striker","National Team T",NULL
+21,2,"Defender","Turkey",NULL

@@ -1,0 +1,53 @@
+"matchID","homeTeam","awayTeam","score","matchDate","stadiumID"
+6,"Team A","Galatasaray",1,"2023-06-10",1
+7,"Team B","fenerbace",-1,"2023-06-12",2
+8,"Team C","besitas",3,"2023-06-15",3
+9,"Team D","bursaspor",0,"2023-06-18",4
+10,"Team E","barcalona",-2,"2023-06-20",5
+11,"Team A","Team B",7,"2023-06-10",1
+12,"Real Madrid","Barcelona",2,"2023-06-10",1
+13,"Manchester United","AC Milan",2,"2023-06-10",1
+14,"Juventus","Liverpool",2,"2023-06-10",1
+15,"Team A","Team B",1,"2023-06-10",1
+16,"Team B","Team C",-1,"2023-06-12",2
+17,"Team C","Team D",3,"2023-06-15",3
+18,"Team D","Team E",0,"2023-06-18",4
+19,"Team E","Team A",7,"2023-06-20",5
+22,"Real Bitis","Team B",2,"2022-12-23",1
+23,"Manchester city","Team B",1,"2022-12-24",3
+24,"Garnada","Inter Milan",3,"2022-12-25",2
+25,"Paris Saint-Germain","Bayern Munich",3,"2022-12-26",4
+26,"Chelsea","Manchester City",2,"2022-12-27",5
+27,"Borussia Dortmund","Inter Milan",1,"2022-12-28",6
+28,"Ajax","Atletico Madrid",4,"2022-12-29",7
+29,"Arsenal","Barcelona",3,"2022-12-30",8
+30,"Real Madrid","Liverpool",2,"2022-12-31",1
+31,"Manchester United","Juventus",1,"2023-01-01",3
+32,"AC Milan","Bayern Munich",2,"2023-01-02",2
+33,"Barcelona","Paris Saint-Germain",3,"2023-01-03",1
+34,"Liverpool","Chelsea",1,"2023-01-04",4
+35,"Inter Milan","Borussia Dortmund",2,"2023-01-05",6
+36,"Atletico Madrid","Ajax",3,"2023-01-06",5
+37,"Bayern Munich","Real Madrid",1,"2023-01-07",7
+38,"Manchester City","Arsenal",2,"2023-01-08",8
+39,"Juventus","Barcelona",3,"2023-01-09",2
+40,"Paris Saint-Germain","Manchester United",1,"2023-01-10",1
+41,"Chelsea","AC Milan",4,"2023-01-11",3
+42,"Borussia Dortmund","Atletico Madrid",2,"2023-01-12",4
+43,"Ajax","Inter Milan",3,"2023-01-13",6
+44,"Arsenal","Bayern Munich",1,"2023-01-14",5
+45,"Real Madrid","Manchester City",2,"2023-01-15",7
+46,"Liverpool","Juventus",3,"2023-01-16",8
+47,"Manchester United","Paris Saint-Germain",1,"2023-01-17",2
+48,"AC Milan","Chelsea",2,"2023-01-18",1
+49,"Barcelona","Borussia Dortmund",3,"2023-01-19",3
+50,"Atletico Madrid","Ajax",1,"2023-01-20",4
+51,"Bayern Munich","Arsenal",4,"2023-01-21",6
+52,"Manchester City","Real Madrid",2,"2023-01-22",5
+53,"Juventus","Liverpool",3,"2023-01-23",7
+54,"Paris Saint-Germain","Chelsea",1,"2023-01-24",8
+112,"Team A","Team z",1,"2023-06-10",1
+113,"Team B","Team C",-1,"2023-06-12",2
+114,"Team C","Team D",3,"2023-06-15",3
+115,"Team D","Team E",0,"2023-06-18",4
+116,"Team E","Team A",-2,"2023-06-20",5

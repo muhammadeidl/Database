@@ -1,0 +1,16 @@
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\bin\Debug\net6.0-windows\BenimProjemFootBall.exe
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\bin\Debug\net6.0-windows\BenimProjemFootBall.deps.json
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\bin\Debug\net6.0-windows\BenimProjemFootBall.runtimeconfig.json
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\bin\Debug\net6.0-windows\BenimProjemFootBall.dll
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\bin\Debug\net6.0-windows\BenimProjemFootBall.pdb
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\obj\Debug\net6.0-windows\BenimProjemFootBall.Form1.resources
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\obj\Debug\net6.0-windows\BenimProjemFootBall.csproj.GenerateResource.cache
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\obj\Debug\net6.0-windows\BenimProjemFootBall.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\obj\Debug\net6.0-windows\BenimProjemFootBall.AssemblyInfoInputs.cache
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\obj\Debug\net6.0-windows\BenimProjemFootBall.AssemblyInfo.cs
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\obj\Debug\net6.0-windows\BenimProjemFootBall.csproj.CoreCompileInputs.cache
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\obj\Debug\net6.0-windows\BenimProjemFootBall.dll
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\obj\Debug\net6.0-windows\refint\BenimProjemFootBall.dll
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\obj\Debug\net6.0-windows\BenimProjemFootBall.pdb
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\obj\Debug\net6.0-windows\BenimProjemFootBall.genruntimeconfig.cache
+C:\Users\asils\Desktop\BenimProjemFootBall\BenimProjemFootBall\obj\Debug\net6.0-windows\ref\BenimProjemFootBall.dll
